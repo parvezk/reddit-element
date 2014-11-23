@@ -1,0 +1,76 @@
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<!--
+Element that returns the public description of a subreddit
+
+##### Example
+
+    <reddit-element subreddit="cute"></reddit-element>
+
+@element reddit-element
+@blurb Element that returns the public description of a subreddit
+@status alpha
+@url github.io
+-->
+<polymer-element name="reddit-element" attributes="subreddit">
+
+  <template>
+
+    <link href="reddit-element.css" rel="stylesheet" />
+
+    <core-ajax url="http://www.reddit.com//r/{{subreddit}}/about.json" auto response="{{resp}}"></core-ajax>
+
+    <content>
+      <div class="myreddit">{{resp.data.public_description}}</div>
+    </content>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      /**
+       * The 'subreddit' attribute takes in the name of a subreddit.
+       * It defaults to the 'aww' subreddit if no value is passed
+       *
+       * @attribute subreddit
+       * @type string
+       */
+      subreddit: "aww",
+
+      /**
+       * The `noevent` event is not actually fired from here,
+       * we document it as an example of documenting events.
+       *
+       * @event noevent
+       */
+
+      /**
+       * The `notitle` attribute does not yet have a purpose.
+       *
+       * @attribute notitle
+       * @type string
+       */
+      notitle: '',
+
+      ready: function() {
+      },
+
+      /**
+       * The `task` method does no work at this time.
+       *
+       * @method task
+       * @return {Object} Returns undefined.
+       * @param {String} dummy Serves no purpose today.
+       */
+      task: function(dummy) {
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

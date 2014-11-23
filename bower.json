@@ -1,7 +1,12 @@
 {
-  "name": "untitled-element",
-  "private": true,
+  "name": "reddit-element",
+  "version": "0.0.1",
   "dependencies": {
-    "polymer": "Polymer/polymer#master"
+    "polymer": "Polymer/polymer#~0.2.3",
+    "core-elements": "Polymer/core-elements#~0.2.3"
+  },
+  "resolutions": {
+    "polymer": "master",
+    "core-component-page": "master"
   }
 }
